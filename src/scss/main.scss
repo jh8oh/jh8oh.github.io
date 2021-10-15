@@ -1,1 +1,16 @@
 @charset "UTF-8";
+@charset "UTF-8";
+
+// Configurations and helpers
+@import "abstract/variables";
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/placeholders";
+
+// Basic styling
+@import "base/layout";
+@import "base/typeface";
+
+// Components
+
+// Page-specific styles
