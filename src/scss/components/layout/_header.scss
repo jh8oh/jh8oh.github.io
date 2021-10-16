@@ -17,6 +17,7 @@ header {
     }
 
     #logo {
+        flex: 0 0 auto;
         cursor: pointer;
 
         img {
@@ -26,7 +27,7 @@ header {
     }
 
     #content_links {
-        flex-grow: 1;
+        flex: 1 1 auto;
         margin-left: 16px !important;
         @extend %no-decoration;
 
