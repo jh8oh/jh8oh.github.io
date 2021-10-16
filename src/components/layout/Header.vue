@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav>
-      <router-link to="/">
+      <router-link id="logo" to="/">
         <img
           @mouseover="logoHovered = true"
           @mouseleave="logoHovered = false"
@@ -9,7 +9,7 @@
           alt="Logo"
         />
       </router-link>
-      <ul>
+      <ul id="content_links">
         <li
           v-for="route in contentRoutes"
           :key="route.path"

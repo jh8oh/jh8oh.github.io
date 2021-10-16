@@ -15,4 +15,4 @@ import Header from "@/components/layout/Header.vue";
 export default class App extends Vue {}
 </script>
 
-<style lang="scss" src="./scss/main.scss"/>
+<style lang="scss" src="./scss/main.scss" />

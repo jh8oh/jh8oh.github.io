@@ -1,0 +1,66 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header
+// -----------------------------------------------------------------------------
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 0 22vw;
+    box-sizing: border-box;
+    z-index: 3;
+    background-color: $color-background-dark;
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    #logo {
+        cursor: pointer;
+
+        img {
+            display: block;
+            @include size(42px);
+        }
+    }
+
+    #content_links {
+        flex-grow: 1;
+        margin-left: 16px !important;
+        @extend %no-decoration;
+
+        li {
+            position: relative;
+            display: inline-block;
+            padding: 12px 8px;
+            text-align: center;
+            cursor: pointer;
+
+            &.right {
+                float: right;
+            }
+
+            &:hover a {
+                color: $color-primary;
+            }
+        }
+
+        a {
+            color: $color-on-background-dark;
+            text-decoration: none;
+
+            &:after {
+                @include shutter-border-horizontal(2px, 54px);
+            }
+
+            &.router-link-active {
+                color: $color-primary;
+
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
