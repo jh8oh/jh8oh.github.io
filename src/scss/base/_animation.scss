@@ -1,0 +1,64 @@
+// ---------------------------------------------------------------------------
+// Contains general keyframes (for animation)
+// ---------------------------------------------------------------------------
+
+// Mixin for keyframes
+@mixin keyframes($keyframes-name) {
+    @keyframes #{$keyframes-name} {
+        @content;
+    }
+
+    // Chrome/Safari
+    @-webkit-keyframes #{$keyframes-name} {
+        @content;
+    }
+
+    // Firefox
+    @-moz-keyframes #{$keyframes-name} {
+        @content;
+    }
+
+    // Internet explorer
+    @-ms-keyframes #{$keyframes-name} {
+        @content;
+    }
+
+    // Opera
+    @-o-keyframes #{$keyframes-name} {
+        @content;
+    }
+}
+
+// Neon flicker animation
+@mixin neon-flicker($name, $color, $color-variant, $small: false, $box: true, $text: true) {
+    @at-root {
+        @include keyframes($name) {
+            5%,
+            19%,
+            40%,
+            99% {
+                @if $text {
+                    color: $color-variant;
+                    text-shadow: none;
+                }
+                @if $box {
+                    border-color: $color-variant;
+                    box-shadow: none;
+                }
+            }
+
+            0%,
+            4%,
+            20%,
+            39%,
+            100% {
+                @if $text {
+                    @include neon-text($color, $color-variant, $small);
+                }
+                @if $box {
+                    @include neon-box-shadow($color, $color-variant, $small);
+                }
+            }
+        }
+    }
+}

@@ -18,10 +18,42 @@
     -o-transition: $args;
 }
 
+// Animation mixin
+@mixin animation($args) {
+    animation: $args;
+    -webkit-animation: $args;
+    -moz-animation: $args;
+    -ms-animation: $args;
+    -o-animation: $args;
+}
+
 // Same height and width mixin
 @mixin size($size) {
     height: $size;
     width: $size;
+}
+
+// Create neon text
+@mixin neon-text($color, $color-dark, $small) {
+    $size: 2px;
+    @if $small {
+        $size: 1px;
+    }
+
+    color: $color;
+    text-shadow: 0 0 $size $color, 0 0 $size / 2 $color-dark;
+}
+
+// Creates a neon box-shadow around the element
+@mixin neon-box-shadow($color, $color-dark, $small) {
+    $size: 8px;
+    @if $small {
+        $size: 2px;
+    }
+
+    border-color: $color;
+    box-shadow: 0 0 $size $color, 0 0 $size * 2 $color-dark, 0 0 $size / 2 $color, inset 0 0 $size $color,
+        inset 0 0 $size * 2 $color-dark, inset 0 0 $size / 2 $color;
 }
 
 // Pseudo-border(:after/:before) that expands and contracts from the center
