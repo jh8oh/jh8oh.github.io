@@ -10,20 +10,22 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/about",
     name: "About Me",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "@/views/About.vue"),
+    component: () => import(/* webpackChunkName: "about" */ "@/views/About.vue"),
   },
   {
     path: "/portfolio",
     name: "Portfolio",
-    component: () =>
-      import(/* webpackChunkName: "portfolio" */ "@/views/Portfolio.vue"),
+    component: () => import(/* webpackChunkName: "portfolio" */ "@/views/Portfolio.vue"),
   },
   {
     path: "/contact",
     name: "Contact Me",
-    component: () =>
-      import(/* webpackChunkName: "contact" */ "@/views/Contact.vue"),
+    component: () => import(/* webpackChunkName: "contact" */ "@/views/Contact.vue"),
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "Not Found",
+    component: () => import(/* webpackChunkName: "notfound" */ "@/views/NotFound.vue"),
   },
 ];
 
