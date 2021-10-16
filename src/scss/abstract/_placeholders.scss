@@ -1,0 +1,15 @@
+// ---------------------------------------------------------------------------
+// Contains all site-wide SCSS placeholder selectors
+// ---------------------------------------------------------------------------
+
+// Removes all whitespace around
+%no-whitespace {
+    padding: 0;
+    margin: 0;
+}
+
+// Unordered list with no decoration
+%no-decoration {
+    @extend %no-whitespace;
+    list-style-type: none;
+}

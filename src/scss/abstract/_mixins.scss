@@ -1,0 +1,39 @@
+// ---------------------------------------------------------------------------
+// Contains all site-wide SCSS mixins
+// ---------------------------------------------------------------------------
+
+// Breakpoint mixin
+@mixin breakpoint($max-width) {
+    @media screen and (max-width: $max-width) {
+        @content;
+    }
+}
+
+// Transition mixin
+@mixin transition($args...) {
+    transition: $args;
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+}
+
+// Same height and width mixin
+@mixin size($size) {
+    height: $size;
+    width: $size;
+}
+
+// Pseudo-border(:after/:before) that expands and contracts from the center
+@mixin shutter-border-horizontal($height, $top, $width: 0) {
+    content: "";
+    position: absolute;
+    height: $height;
+    width: $width;
+    top: $top;
+    left: 0;
+    right: 0; // requires both left and right to center shutter
+    margin: 0 auto;
+    background-color: $color-primary;
+    @include transition(width 0.3s ease);
+}
