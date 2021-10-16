@@ -5,3 +5,19 @@
 body {
     @extend %no-whitespace;
 }
+
+// Container for what's shown by the router-view
+#content {
+    position: relative;
+    margin-top: $header-height;
+}
+
+// The default page container (what's within the router-page)
+.page {
+    min-height: $content-height;
+    overflow: auto;
+
+    &-content {
+        padding-bottom: 32px;
+    }
+}

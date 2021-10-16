@@ -10,8 +10,11 @@
 // Basic styling
 @import "base/layout";
 @import "base/typeface";
+@import "base/animation";
 
 // Components
 @import "components/layout/header";
+@import "components/button";
 
 // Page-specific styles
+@import "views/home";
