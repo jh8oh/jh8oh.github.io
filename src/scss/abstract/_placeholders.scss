@@ -9,7 +9,7 @@
 }
 
 // Unordered list with no decoration
-ul%no-decoration {
+%no-decoration {
     @extend %no-whitespace;
     list-style-type: none;
 }

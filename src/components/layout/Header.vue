@@ -9,6 +9,8 @@
           alt="Logo"
         />
       </router-link>
+      <input id="toggle-menu" type="checkbox" />
+      <label id="menu-icon" for="toggle-menu" />
       <ul id="content_links">
         <li
           v-for="route in contentRoutes"

@@ -37,3 +37,5 @@ $code-font-family: "Share Tech Mono", monospace;
 // Dimesions
 $header-height: 56px;
 $content-height: calc(100vh - #{$header-height});
+$tablet-breakpoint: 1200px;
+$phone-breakpoint: 600px;

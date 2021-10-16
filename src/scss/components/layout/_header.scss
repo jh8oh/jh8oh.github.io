@@ -3,6 +3,9 @@
 // -----------------------------------------------------------------------------
 
 header {
+    $breakpoint-large: 1024px;
+    $breakpoint-small: 600px; // Convert to vertical menu-bar style navigation
+
     position: fixed;
     width: 100%;
     top: 0;
@@ -11,14 +14,32 @@ header {
     z-index: 3;
     background-color: $color-background-dark;
 
+    @include breakpoint($breakpoint-large) {
+        // Smaller horizontal padding with smaller screen
+        padding: 0 10vw;
+    }
+
+    @include breakpoint($breakpoint-small) {
+        padding: 0;
+    }
+
     nav {
         display: flex;
         align-items: center;
+
+        @include breakpoint($breakpoint-small) {
+            display: inline;
+        }
     }
 
     #logo {
         flex: 0 0 auto;
         cursor: pointer;
+
+        @include breakpoint($breakpoint-small) {
+            float: left;
+            margin: 7px 4vw;
+        }
 
         img {
             display: block;
@@ -26,17 +47,66 @@ header {
         }
     }
 
+    #menu-icon {
+        display: none;
+        float: right;
+        @include size(36px);
+        margin: 10px 4vw;
+        background: url("../assets/ico/header/menu-white.png") center;
+        background-size: contain;
+        @include transition(all 0.5s ease-in-out);
+
+        @include breakpoint($breakpoint-small) {
+            display: block;
+        }
+    }
+
+    input {
+        display: none;
+
+        // When menu is not clicked, change icon to accent
+        & + #menu-icon:hover {
+            background-image: url("../assets/ico/header/menu-accent.png");
+        }
+
+        &:checked {
+            // When menu is clicked, change icon to close
+            & + #menu-icon {
+                background: url("../assets/ico/header/menu-close.png") center/contain;
+                transform: rotate(90deg);
+            }
+
+            // Increase nav's max height
+            & ~ #content_links {
+                max-height: 256px;
+            }
+        }
+    }
+
     #content_links {
         flex: 1 1 auto;
-        margin-left: 16px !important;
+        margin-left: 16px;
         @extend %no-decoration;
+
+        @include breakpoint($breakpoint-small) {
+            max-height: 0;
+            margin-top: 56px;
+            margin-left: 0;
+            overflow: hidden;
+            @include transition(max-height 0.5s ease-in-out);
+        }
 
         li {
             position: relative;
             display: inline-block;
-            padding: 12px 8px;
             text-align: center;
             cursor: pointer;
+
+            @include breakpoint($breakpoint-small) {
+                display: block;
+                width: 100%;
+                box-sizing: border-box; // Keeps links centered
+            }
 
             &.right {
                 float: right;
@@ -48,6 +118,10 @@ header {
         }
 
         a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 8px;
             color: $color-on-background-dark;
             text-decoration: none;
 
