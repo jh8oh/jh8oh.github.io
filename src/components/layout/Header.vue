@@ -41,6 +41,8 @@ import logoAccent from "@/assets/ico/header/logo-accent.png";
 })
 export default class Header extends Vue {
   private logoHovered = false;
-  private contentRoutes = router.options.routes.filter((r) => r.path != "/");
+  private contentRoutes = router.options.routes.filter(
+    (r) => r.path != "/" && r.path != "/:catchAll(.*)"
+  );
 }
 </script>
