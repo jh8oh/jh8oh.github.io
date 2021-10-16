@@ -1,0 +1,12 @@
+// ---------------------------------------------------------------------------
+// Contains all site-wide SCSS functions
+// ---------------------------------------------------------------------------
+
+// Returns the pixel size in rem
+@function calculateRem($px) {
+  @if (type-of($px) == "number") {
+    $rem: $px / 16px;
+    @return $rem * 1rem;
+  }
+  @return $px;
+}
