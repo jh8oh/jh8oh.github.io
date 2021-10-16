@@ -2,6 +2,8 @@
 // Contains all site-wide SCSS mixins
 // ---------------------------------------------------------------------------
 
+@use "sass:math";
+
 // Breakpoint mixin
 @mixin breakpoint($max-width) {
     @media screen and (max-width: $max-width) {
@@ -41,7 +43,7 @@
     }
 
     color: $color;
-    text-shadow: 0 0 $size $color, 0 0 $size / 2 $color-dark;
+    text-shadow: 0 0 $size $color, 0 0 math.div($size, 2) $color-dark;
 }
 
 // Creates a neon box-shadow around the element
@@ -52,8 +54,10 @@
     }
 
     border-color: $color;
-    box-shadow: 0 0 $size $color, 0 0 $size * 2 $color-dark, 0 0 $size / 2 $color, inset 0 0 $size $color,
-        inset 0 0 $size * 2 $color-dark, inset 0 0 $size / 2 $color;
+    box-shadow: 0 0 $size $color, 0 0 $size * 2 $color-dark,
+        0 0
+            math.div($size, 2) $color, inset 0 0 $size $color, inset 0 0 $size * 2 $color-dark,
+                inset 0 0 math.div($size, 2) $color;
 }
 
 // Pseudo-border(:after/:before) that expands and contracts from the center

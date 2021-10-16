@@ -30,11 +30,23 @@
 
 // Display text
 .display {
-    @include text($display-font-family, min(18vw, 96px), 1, -1px, none, transparent);
+    position: relative;
+    @include text($display-font-family, min(max(80px, 18vw), 144px), 1, -1px, none, transparent);
     word-spacing: -0.1em;
     white-space: nowrap;
     background: $color-secondary-gradient;
     background-clip: text;
+
+    &::after {
+        position: absolute;
+        left: 20%;
+        bottom: -45%;
+        content: "u";
+        @include text($display-swash-font-family, min(max(100px, 22vw), 180px), 1, -1px, none, transparent);
+        white-space: nowrap;
+        background: $color-secondary-gradient;
+        background-clip: text;
+    }
 }
 
 // Heading

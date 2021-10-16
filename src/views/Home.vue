@@ -1,9 +1,11 @@
 <template>
-  <div id="home">
+  <div id="home" class="page">
     <div id="background-image" />
     <div id="greeting">
       <span>Hi, I'm</span>
-      <span id="name">Ji Ho Oh</span>
+      <br />
+      <span id="name" class="display">Ji Ho Oh</span>
+      <br />
       <span>Software Developer, Programmer, Designer</span>
       <br /><br />
       <Button

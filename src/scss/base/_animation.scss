@@ -62,3 +62,35 @@
         }
     }
 }
+
+// Image flicker animation (repeated)
+@mixin image-flicker($name, $image-1, $image-2, $image-1-filter: none, $image-2-filter: none) {
+    @at-root {
+        @include keyframes($name) {
+            0%,
+            19%,
+            22%,
+            47%,
+            60%,
+            82%,
+            84%,
+            86%,
+            88%,
+            100% {
+                background-image: $image-1;
+                filter: $image-1-filter;
+            }
+
+            20%,
+            21%,
+            48%,
+            59%,
+            83%,
+            85%,
+            87% {
+                background-image: $image-2;
+                filter: $image-2-filter;
+            }
+        }
+    }
+}
