@@ -1,18 +1,14 @@
 <template>
   <div id="home" class="page">
-    <div id="background-image" />
     <div id="greeting">
+      <BackgroundImage />
       <span>Hi, I'm</span>
       <br />
-      <span id="name" class="display">Ji Ho Oh</span>
+      <span id="name">Ji Ho Oh</span>
       <br />
       <span>Software Developer, Programmer, Designer</span>
       <br /><br />
-      <Button
-        :text="'Get to know me'"
-        :buttonClass="'secondary'"
-        @clicked="goToAbout()"
-      />
+      <Button :text="'Get to know me'" :buttonClass="'secondary'" @clicked="goToAbout()" />
     </div>
   </div>
 </template>
@@ -20,10 +16,12 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import router from "@/router";
+import BackgroundImage from "@/components/BackgroundImage.vue";
 import Button from "@/components/Button.vue";
 
 @Options({
   components: {
+    BackgroundImage,
     Button,
   },
 })
