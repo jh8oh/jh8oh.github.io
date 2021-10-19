@@ -1,0 +1,49 @@
+// ---------------------------------------------------------------------------
+// Contains everything to do with transitions
+// ---------------------------------------------------------------------------
+
+// Vue transitions
+// -enter/-leave: Starting state of entering/leaving object
+// -enter-to/-leave-to: Ending state of entering/leaving object
+// -enter-active/leave-active: Active state of entering/leaving object (Persists throughout the entire phase)
+
+// Page transitions (Page slides in on top of previous page)
+%view-transition-active {
+    position: fixed;
+    min-height: $content-height;
+    width: 100%;
+    top: 56px;
+    background: $color-background;
+}
+
+@mixin view-slide-transition($translateX) {
+    &-enter {
+        &-from {
+            transform: translateX($translateX);
+        }
+
+        &-to {
+            transform: translateX(0%);
+        }
+
+        &-active {
+            @extend %view-transition-active;
+            @include transition(transform 0.4s ease-in-out);
+        }
+    }
+
+    &-leave-active {
+        @extend %view-transition-active;
+        opacity: 0;
+    }
+}
+
+// Page slides from right-to-left
+.view-slide-ltr {
+    @include view-slide-transition(100%);
+}
+
+// Page slides from left-to-right
+.view-slide-rtl {
+    @include view-slide-transition(-100%);
+}

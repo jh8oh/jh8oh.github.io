@@ -34,4 +34,20 @@ const router = createRouter({
   routes,
 });
 
+router.afterEach((to, from) => {
+  const routeIdMap = new Map([
+    ["Home", 0],
+    ["About Me", 1],
+    ["Portfolio", 2],
+    ["Contact Me", 3],
+    ["Not Found", 4],
+  ]);
+
+  const toId = routeIdMap.get(to.name ? to.name.toString() : "Not Found");
+  const fromId = routeIdMap.get(from.name ? from.name.toString() : "Not Found");
+
+  to.meta.transitionName =
+    (toId as number) > (fromId as number) ? "view-slide-ltr" : "view-slide-rtl";
+});
+
 export default router;
