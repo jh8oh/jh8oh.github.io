@@ -1,7 +1,11 @@
 <template>
   <Header />
   <div id="content">
-    <router-view />
+    <router-view v-slot="{ Component, route }">
+      <transition :name="route.meta.transitionName" mode="in-out">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
