@@ -25,6 +25,7 @@ import {
   yearFacts,
   personalWebsiteV1,
   cppChess,
+  colorPicker,
 } from "@/assets/content/projects";
 
 @Options({
@@ -34,6 +35,13 @@ import {
   },
 })
 export default class Portfolio extends Vue {
-  private archivedProjects = [oneStoryADay, weekPlanner, yearFacts, personalWebsiteV1, cppChess];
+  private archivedProjects = [
+    oneStoryADay,
+    weekPlanner,
+    yearFacts,
+    personalWebsiteV1,
+    cppChess,
+    colorPicker,
+  ];
 }
 </script>

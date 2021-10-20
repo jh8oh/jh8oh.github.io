@@ -39,7 +39,7 @@ class ArchivedProject {
 export const oneStoryADay = new ArchivedProject(
   "One Story a Day",
   null,
-  'Android app that replicates <a href="https://www.onestoryaday.ca/"><em>One Story a Day</em></a>',
+  'Android app that replicates <a href="https://www.onestoryaday.ca/"><em>One Story a Day</em></a>.',
   ["Android", "JWT authentication", "WordPress API"]
 );
 
@@ -52,7 +52,7 @@ export const weekPlanner = new ArchivedProject(
       hoveredIcon: githubPrimary,
     },
   ],
-  "A small planner that keeps track of tasks on a weekly basis",
+  "A small planner that keeps track of tasks on a weekly basis.",
   ["Android", "Room", "Dagger2", "Data Binding"]
 );
 
@@ -65,7 +65,7 @@ export const yearFacts = new ArchivedProject(
       hoveredIcon: githubPrimary,
     },
   ],
-  'Uses the <a href="http://numbersapi.com/#random/year">Numbers API</a> to grab interesting facts about years',
+  'Uses the <a href="http://numbersapi.com/#random/year">Numbers API</a> to grab interesting facts about years.',
   ["Android", "Retrofit", "Koin", "View Binding"]
 );
 
@@ -91,6 +91,19 @@ export const cppChess = new ArchivedProject(
       hoveredIcon: githubPrimary,
     },
   ],
-  "University final project for CS246 to create a working chess game in C++",
+  "University final project for CS246 to create a working chess game in C++.",
   ["C++", "Linux Terminal"]
+);
+
+export const colorPicker = new ArchivedProject(
+  "Colour Picker",
+  [
+    {
+      to: "https://github.com/jh8oh/colorpicker",
+      unhoveredIcon: githubDark,
+      hoveredIcon: githubPrimary,
+    },
+  ],
+  "A colour picker module for Android. Was hosted on Bintray until its deprecration.",
+  ["Android", "Bintray"]
 );
