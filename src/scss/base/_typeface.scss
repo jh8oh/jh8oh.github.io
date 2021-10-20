@@ -1,0 +1,88 @@
+// ---------------------------------------------------------------------------
+// Contains everything to do with typeface (headline, body, caption, etc.)
+// ---------------------------------------------------------------------------
+
+// General text mixin
+@mixin text(
+    $font-family,
+    $font-size,
+    $line-height,
+    $letter-spacing,
+    $text-transform: none,
+    $color: $color-on-background
+) {
+    margin: 0;
+    font-family: $font-family;
+    font-size: $font-size; // Fallback if rem is not supported
+    font-size: calculateRem($font-size);
+    font-weight: 400;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    text-transform: $text-transform;
+    color: $color;
+}
+
+@mixin main-heading($padding-bottom, $margin-bottom, $border-bottom) {
+    display: inline-block;
+    padding-bottom: $padding-bottom;
+    margin-bottom: $margin-bottom;
+    border-bottom: $border-bottom;
+}
+
+// Display text
+@mixin display-text($size, $underline-size) {
+    position: relative;
+    @include text($display-font-family, $size, 1, -1px, none, transparent);
+    word-spacing: -0.1em;
+    white-space: nowrap;
+    background: $color-secondary-gradient;
+    background-clip: text;
+
+    @if $underline-size != 0 {
+        &::after {
+            position: absolute;
+            left: 20%;
+            bottom: -45%;
+            content: "u";
+            @include text($display-swash-font-family, $underline-size, 1, -1px, none, transparent);
+            white-space: nowrap;
+            background: $color-secondary-gradient;
+            background-clip: text;
+        }
+    }
+}
+
+// Heading
+h1 {
+    @include text($heading-font-family, 48px, 1.2, -0.5px, uppercase);
+    @include main-heading(16px, 28px, $color-on-background 4px solid);
+}
+
+h2 {
+    @include text($heading-font-family, 36px, 1.2, -1px, uppercase);
+    @include main-heading(12px, 24px, $color-on-background 3px solid);
+}
+
+h3 {
+    @include text($heading-font-family, 26px, 1.2, 0);
+}
+
+h4 {
+    @include text($heading-font-family, 22px, 1.2, 0);
+}
+
+// Body
+#app {
+    @include text($body-font-family, 18px, 1.8, 0.5px);
+}
+
+.body2 {
+    @include text($body-font-family, 14px, 1.8, 1px);
+}
+
+code {
+    @include text($code-font-family, 14px, 1.8, 1px);
+    background-color: $code-background-color;
+    padding: 4px;
+    border-radius: 4px;
+}

@@ -1,0 +1,60 @@
+// ---------------------------------------------------------------------------
+// This file contains all styles related to the "Button" component.
+// ---------------------------------------------------------------------------
+
+button {
+    @mixin neon-flicker-on-hover($anim-name) {
+        @include animation(none);
+
+        &:hover {
+            @include animation($anim-name 0.2s forwards);
+        }
+    }
+
+    padding: 8px 36px;
+    background-color: transparent;
+    border: 1px solid $color-primary-variant;
+    outline: none;
+    cursor: pointer;
+    @include text(inherit, inherit, inherit, 2px, uppercase, $color-primary-variant); // Fonts need to be inherited
+    @include neon-flicker("neon-flicker-primary", $color-primary, $color-primary-variant);
+    @include neon-flicker-on-hover(neon-flicker-primary);
+
+    // Secondary colour
+    &.secondary {
+        border-color: $color-secondary-dark;
+        color: $color-secondary-dark;
+        @include neon-flicker("neon-flicker-secondary", $color-secondary, $color-secondary-dark);
+        @include neon-flicker-on-hover(neon-flicker-secondary);
+    }
+
+    // Smaller size
+    &.small {
+        padding: 4px 16px;
+        @include neon-flicker("neon-flicker-primary-small", $color-primary, $color-primary-variant, true);
+        @include neon-flicker-on-hover(neon-flicker-primary-small);
+
+        &.secondary {
+            @include neon-flicker("neon-flicker-secondary-small", $color-secondary, $color-secondary-dark, true);
+            @include neon-flicker-on-hover(neon-flicker-secondary-small);
+        }
+    }
+
+    // No border
+    &.no-border {
+        border: none;
+        @include neon-flicker("neon-flicker-primary-no-border", $color-primary, $color-primary-variant, true, false);
+        @include neon-flicker-on-hover(neon-flicker-primary-no-border);
+
+        &.secondary {
+            @include neon-flicker(
+                "neon-flicker-secondary-no-border",
+                $color-secondary,
+                $color-secondary-dark,
+                true,
+                false
+            );
+            @include neon-flicker-on-hover(neon-flicker-secondary-no-border);
+        }
+    }
+}

@@ -1,30 +1,36 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <Header />
+  <div id="content">
+    <router-view v-slot="{ Component, route }">
+      <transition
+        :name="route.meta.transitionName"
+        :mode="route.meta.transitionName === '' ? 'out-in' : 'in-out'"
+      >
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <SidebarLinks v-if="isContent" />
   </div>
-  <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import Header from "@/components/layout/Header.vue";
+import SidebarLinks from "@/components/layout/SidebarLinks.vue";
 
-#nav {
-  padding: 30px;
+@Options({
+  components: {
+    Header,
+    SidebarLinks,
+  },
+  computed: {
+    isContent() {
+      const routeName = this.$route.name;
+      return !(routeName === "Home" || routeName === "NotFound");
+    },
+  },
+})
+export default class App extends Vue {}
+</script>
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<style lang="scss" src="./scss/main.scss" />

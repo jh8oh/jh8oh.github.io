@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer
+// -----------------------------------------------------------------------------
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+
+    @include breakpoint($phone-breakpoint) {
+        bottom: 48px;
+    }
+}

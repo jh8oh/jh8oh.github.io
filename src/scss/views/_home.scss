@@ -1,0 +1,25 @@
+// ---------------------------------------------------------------------------
+// This file contains styles that are specific to the "Home" page.
+// ---------------------------------------------------------------------------
+
+#home {
+  background-color: $color-background-dark;
+
+  #greeting {
+    @extend %absolute-center;
+    width: 75vw;
+    max-width: 420px;
+    text-align: center;
+
+    #name {
+      display: inline-block;
+      margin: 20px 0;
+      @include display-text(min(max(80px, 18vw), 144px), min(max(100px, 22vw), 180px));
+      transform: rotate(-5deg);
+    }
+
+    span:not(#name) {
+      color: $color-on-background-dark;
+    }
+  }
+}

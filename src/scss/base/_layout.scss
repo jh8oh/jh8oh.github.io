@@ -1,0 +1,31 @@
+// ---------------------------------------------------------------------------
+// Contains styles for base layout
+// ---------------------------------------------------------------------------
+
+body {
+    @extend %no-whitespace;
+}
+
+// Container for what's shown by the router-view
+#content {
+    position: relative;
+    margin-top: $header-height;
+}
+
+// The default page container (what's within the router-page)
+.page {
+    min-height: $content-height;
+    overflow: auto;
+
+    &-content {
+        padding-bottom: $footer-height;
+    }
+
+    @include breakpoint($phone-breakpoint) {
+        min-height: $content-phone-height;
+
+        &-content {
+            padding-bottom: $phone-footer-height;
+        }
+    }
+}

@@ -9,18 +9,48 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    name: "About Me",
+    component: () => import(/* webpackChunkName: "about" */ "@/views/About.vue"),
+  },
+  {
+    path: "/portfolio",
+    name: "Portfolio",
+    component: () => import(/* webpackChunkName: "portfolio" */ "@/views/Portfolio.vue"),
+  },
+  {
+    path: "/contact",
+    name: "Contact Me",
+    component: () => import(/* webpackChunkName: "contact" */ "@/views/Contact.vue"),
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "Not Found",
+    component: () => import(/* webpackChunkName: "notfound" */ "@/views/NotFound.vue"),
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+router.afterEach((to, from) => {
+  const routeIdMap = new Map([
+    ["Home", 0],
+    ["About Me", 1],
+    ["Portfolio", 2],
+    ["Contact Me", 3],
+  ]);
+
+  const toId = routeIdMap.get(to.name ? to.name.toString() : "");
+  const fromId = routeIdMap.get(from.name ? from.name.toString() : "");
+
+  to.meta.transitionName =
+    (toId as number) > (fromId as number)
+      ? "view-slide-ltr"
+      : (toId as number) < (fromId as number)
+      ? "view-slide-rtl"
+      : "";
 });
 
 export default router;

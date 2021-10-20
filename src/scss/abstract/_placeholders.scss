@@ -1,0 +1,41 @@
+// ---------------------------------------------------------------------------
+// Contains all site-wide SCSS placeholder selectors
+// ---------------------------------------------------------------------------
+
+// General margin for standard page content
+%page-content-default-margin {
+    margin: 80px 24vw 40px;
+
+    @include breakpoint($tablet-breakpoint) {
+        margin: 40px 14vw 20px;
+    }
+
+    @include breakpoint($phone-breakpoint) {
+        margin: 40px 4vw 20px;
+    }
+}
+
+// Centers element using position: absolute
+%absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Removes all whitespace around
+%no-whitespace {
+    padding: 0;
+    margin: 0;
+}
+
+// Unordered list with no decoration
+%no-decoration {
+    @extend %no-whitespace;
+    list-style-type: none;
+}
+
+// Anchor with no underline on hover
+a%no-underline {
+    background: none;
+}
