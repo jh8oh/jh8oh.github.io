@@ -1,0 +1,50 @@
+// ---------------------------------------------------------------------------
+// This file contains styles that are specific to the "Contact Me" page.
+// ---------------------------------------------------------------------------
+
+#contact-me {
+    &-content {
+        @extend %absolute-center;
+        max-width: 800px;
+
+        @include breakpoint($phone-breakpoint) {
+            position: static;
+            top: auto;
+            left: auto;
+            transform: none;
+            margin: 60px 4vw;
+        }
+    }
+
+    form {
+        display: flex;
+        gap: 6px;
+        flex-flow: column;
+        margin: 8px 0;
+
+        #sender-info {
+            display: inline-flex;
+            gap: 6px;
+
+            @include breakpoint(800px) {
+                flex-flow: column;
+            }
+        }
+
+        input {
+            flex: 1;
+            padding: 6px 4px;
+            border: 1px solid $color-on-background;
+            @include text(inherit, inherit, inherit, inherit, inherit); // Text must be inheritted
+        }
+
+        textarea {
+            @extend input;
+            resize: none;
+        }
+    }
+
+    button {
+        margin-right: 6px;
+    }
+}
