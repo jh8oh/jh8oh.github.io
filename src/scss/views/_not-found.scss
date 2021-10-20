@@ -1,0 +1,24 @@
+// ---------------------------------------------------------------------------
+// This file contains styles that are specific to the "Not Found (404)" page.
+// ---------------------------------------------------------------------------
+
+#not-found {
+    background-color: $color-background-dark;
+
+    &-content {
+        @extend %absolute-center;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    #code {
+        @include display-text(min(max(156px, 32vw), 244px), 0);
+    }
+
+    #description {
+        @include display-text(min(max(60px, 14vw), 108px), 0);
+        margin: max(-80px, -6vh) 0 min(40px, 3vh);
+        padding-left: 20px;
+    }
+}

@@ -16,6 +16,8 @@
 // Components
 @import "components/layout/header";
 @import "components/button";
+@import "components/background-image";
 
 // Page-specific styles
 @import "views/home";
+@import "views/not-found";

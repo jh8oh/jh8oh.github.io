@@ -1,0 +1,16 @@
+.background-image {
+    @extend %absolute-center;
+    @include size(85vw);
+    max-height: 80vh;
+    max-width: 750px;
+    background: center/contain no-repeat;
+    opacity: 0.1;
+
+    @include image-flicker(
+        "flicker-home-background",
+        url("../assets/img/home/logo-border-accent.png"),
+        url("../assets/img/home/logo-border-base.png"),
+        drop-shadow(0 0 6px $color-primary) drop-shadow(0 0 12px $color-primary-variant)
+    );
+    @include animation(flicker-home-background 10s linear infinite);
+}
