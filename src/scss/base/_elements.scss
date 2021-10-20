@@ -1,0 +1,29 @@
+// ---------------------------------------------------------------------------
+// Contains basic styles for the base elements
+// ---------------------------------------------------------------------------
+
+// Unordered lists
+ul {
+    margin: 0;
+}
+
+// Paragraphs
+p {
+    @extend %no-whitespace;
+}
+
+// Links
+a {
+    text-decoration: none;
+    background: linear-gradient($color-primary, $color-primary) no-repeat 0% 100%/0 1px;
+    @include transition(background-size 0.2s ease-in-out);
+
+    &:link,
+    &:visited {
+        color: $color-primary;
+    }
+
+    &:hover {
+        background-size: 100% 1px;
+    }
+}
