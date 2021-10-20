@@ -35,21 +35,21 @@ export default class SidebarLinks extends Vue {
     title: "Github",
     unhoveredIcon: githubDark,
     hoveredIcon: githubPrimary,
-    link: "https://github.com/jh8oh",
+    to: "https://github.com/jh8oh",
   };
 
   private linkedInLink = {
     title: "LinkedIn",
     unhoveredIcon: linkedInDark,
     hoveredIcon: linkedInPrimary,
-    link: "https://www.linkedin.com/in/ji-ho-oh-63b590191/",
+    to: "https://www.linkedin.com/in/ji-ho-oh-63b590191/",
   };
 
   private resumeLink = {
     title: "Resume",
     unhoveredIcon: resumeDark,
     hoveredIcon: resumePrimary,
-    link: resumeTo,
+    to: resumeTo,
   };
 
   private links = [this.githubLink, this.linkedInLink, this.resumeLink];
