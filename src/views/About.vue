@@ -45,7 +45,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import ExperienceCard from "@/components/about/ExperienceCard.vue";
+import ExperienceCard from "@/components/views/about/ExperienceCard.vue";
 import Footer from "@/components/layout/Footer.vue";
 
 import { theScore, innovapost, dcCanada } from "@/assets/content/experience";
