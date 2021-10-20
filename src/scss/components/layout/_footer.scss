@@ -8,4 +8,8 @@ footer {
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
+
+    @include breakpoint($phone-breakpoint) {
+        bottom: 48px;
+    }
 }

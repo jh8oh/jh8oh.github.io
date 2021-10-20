@@ -10,7 +10,10 @@
 
     @include breakpoint($phone-breakpoint) {
         // Links are now locked below the footer
-        position: static;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 
     ul {
@@ -54,13 +57,12 @@
         span {
             opacity: 0;
             margin-left: 6px;
+            font-family: $code-font-family;
             color: $color-primary;
             @include animation(none);
 
             @include breakpoint($phone-breakpoint) {
-                position: absolute;
-                transform: translateX(-50%);
-                margin: 0;
+                display: none;
             }
         }
     }
