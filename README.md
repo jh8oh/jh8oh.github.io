@@ -1,24 +1,23 @@
-# personal-website-v2
+# Personal Website V1.1
 
-## Project setup
-```
-npm install
-```
+Cleaned-up version of my personal website. Built in order to familiarize myself with web development and to advertise myself once I complete my undergraduate education.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Stack
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Vue 3
+  - Vue Router
+  - Vue class component
+- SCSS
+- TypeScript
 
-### Lints and fixes files
-```
-npm run lint
-```
+## To-Do
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Blog
+  - Blog post component
+  - Blog post page
+  - Blog content
+- Portfolio
+  - Featured section
+  - At least 2 projects to feature
+- About Me
+  - Skills/Abilities section
