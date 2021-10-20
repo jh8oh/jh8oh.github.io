@@ -1,0 +1,36 @@
+// ---------------------------------------------------------------------------
+// This file contains styles that are specific to the "About Me" page.
+// ---------------------------------------------------------------------------
+
+#about {
+    &-content {
+        @extend %page-content-default-margin;
+    }
+
+    #intro {
+        $breakpoint: 1200px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        @include breakpoint($breakpoint) {
+            flex-direction: column;
+        }
+
+        img {
+            width: 40%;
+            max-width: 320px;
+            margin-left: 52px;
+
+            @include breakpoint($breakpoint) {
+                width: 80%;
+                margin-left: 0;
+                margin-bottom: 16px;
+            }
+        }
+
+        p > span {
+            white-space: nowrap;
+        }
+    }
+}
