@@ -1,9 +1,17 @@
 <template>
-  <div></div>
+  <div class="page">
+    <Footer />
+  </div>
 </template>
 
 <script lang="ts">
-import { Vue } from "vue-class-component";
+import { Options, Vue } from "vue-class-component";
+import Footer from "@/components/layout/Footer.vue";
 
+@Options({
+  components: {
+    Footer,
+  },
+})
 export default class Contact extends Vue {}
 </script>

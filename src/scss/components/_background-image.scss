@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------------------
+// This file contains all styles related to the "Background Image" component.
+// ---------------------------------------------------------------------------
+
 .background-image {
     @extend %absolute-center;
     @include size(85vw);
