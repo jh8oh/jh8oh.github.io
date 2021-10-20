@@ -16,6 +16,28 @@
           reading manga, and world-building.
         </p>
       </section>
+      <section id="experience">
+        <h2>Experience</h2>
+        <div id="experience-content">
+          <ul id="timeline">
+            <div class="navigation-bar-scroll-wrapper">
+              <h4 class="navigation-bar-content">
+                <li
+                  v-for="experience in experiences"
+                  :key="experience.id"
+                  @click="activeExperience = experience"
+                  :class="{ active: activeExperience === experience }"
+                >
+                  {{ experience.employer }}
+                </li>
+              </h4>
+            </div>
+          </ul>
+          <transition name="flicker" mode="out-in">
+            <ExperienceCard :key="activeExperience.id" :activeExperience="activeExperience" />
+          </transition>
+        </div>
+      </section>
     </div>
     <Footer />
   </div>
@@ -23,12 +45,19 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import ExperienceCard from "@/components/about/ExperienceCard.vue";
 import Footer from "@/components/layout/Footer.vue";
+
+import { theScore, innovapost, dcCanada } from "@/assets/content/experience";
 
 @Options({
   components: {
+    ExperienceCard,
     Footer,
   },
 })
-export default class About extends Vue {}
+export default class About extends Vue {
+  private experiences = [theScore, innovapost, dcCanada];
+  private activeExperience = theScore;
+}
 </script>
