@@ -40,14 +40,17 @@ router.afterEach((to, from) => {
     ["About Me", 1],
     ["Portfolio", 2],
     ["Contact Me", 3],
-    ["Not Found", 4],
   ]);
 
-  const toId = routeIdMap.get(to.name ? to.name.toString() : "Not Found");
-  const fromId = routeIdMap.get(from.name ? from.name.toString() : "Not Found");
+  const toId = routeIdMap.get(to.name ? to.name.toString() : "");
+  const fromId = routeIdMap.get(from.name ? from.name.toString() : "");
 
   to.meta.transitionName =
-    (toId as number) > (fromId as number) ? "view-slide-ltr" : "view-slide-rtl";
+    (toId as number) > (fromId as number)
+      ? "view-slide-ltr"
+      : (toId as number) < (fromId as number)
+      ? "view-slide-rtl"
+      : "";
 });
 
 export default router;

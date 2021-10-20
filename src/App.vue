@@ -2,7 +2,10 @@
   <Header />
   <div id="content">
     <router-view v-slot="{ Component, route }">
-      <transition :name="route.meta.transitionName" mode="in-out">
+      <transition
+        :name="route.meta.transitionName"
+        :mode="route.meta.transitionName === '' ? 'out-in' : 'in-out'"
+      >
         <component :is="Component" />
       </transition>
     </router-view>

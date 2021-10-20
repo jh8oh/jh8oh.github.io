@@ -1,7 +1,7 @@
 <template>
   <div id="home" class="page">
+    <BackgroundImage />
     <div id="greeting">
-      <BackgroundImage />
       <span>Hi, I'm</span>
       <br />
       <span id="name">Ji Ho Oh</span>
