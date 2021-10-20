@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the sidebar links
+// -----------------------------------------------------------------------------
+
+#sidebar-links {
+    position: fixed;
+    bottom: 32px;
+    left: 2.5%;
+    z-index: 3;
+
+    @include breakpoint($phone-breakpoint) {
+        // Links are now locked below the footer
+        position: static;
+    }
+
+    ul {
+        @extend %no-decoration;
+
+        @include breakpoint($phone-breakpoint) {
+            text-align: center;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 4px 0;
+            margin: 4px 0;
+
+            // Links are now horizontal
+            @include breakpoint($phone-breakpoint) {
+                position: relative;
+                display: inline-block;
+                margin: 0 2px;
+            }
+        }
+
+        a {
+            @extend %no-underline;
+
+            &:hover + span {
+                @include animation(flicker-transition-enter 0.2s forwards);
+            }
+        }
+
+        img {
+            display: block;
+            @include size(32px);
+
+            &:hover {
+                filter: drop-shadow(0 0 0.4px $color-primary) drop-shadow(0 0 0.8px $color-primary-variant);
+            }
+        }
+
+        span {
+            opacity: 0;
+            margin-left: 6px;
+            color: $color-primary;
+            @include animation(none);
+
+            @include breakpoint($phone-breakpoint) {
+                position: absolute;
+                transform: translateX(-50%);
+                margin: 0;
+            }
+        }
+    }
+}

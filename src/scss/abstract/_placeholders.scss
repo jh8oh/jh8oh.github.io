@@ -21,3 +21,8 @@
     @extend %no-whitespace;
     list-style-type: none;
 }
+
+// Anchor with no underline on hover
+a%no-underline {
+    background: none;
+}
