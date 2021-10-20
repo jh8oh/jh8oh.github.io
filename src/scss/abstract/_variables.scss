@@ -36,6 +36,9 @@ $code-font-family: "Share Tech Mono", monospace;
 
 // Dimesions
 $header-height: 56px;
+$footer-height: 24px;
+$phone-footer-height: 72px;
 $content-height: calc(100vh - #{$header-height});
+$content-phone-height: calc(100vh - #{$header-height} - #{phone-footer-height});
 $tablet-breakpoint: 1200px;
 $phone-breakpoint: 600px;

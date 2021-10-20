@@ -18,6 +18,14 @@ body {
     overflow: auto;
 
     &-content {
-        padding-bottom: 32px;
+        padding-bottom: $footer-height;
+    }
+
+    @include breakpoint($phone-breakpoint) {
+        min-height: $content-phone-height;
+
+        &-content {
+            padding-bottom: $phone-footer-height;
+        }
     }
 }
