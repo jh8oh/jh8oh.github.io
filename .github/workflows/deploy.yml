@@ -1,0 +1,43 @@
+# This workflow will do a clean install of node dependencies, build the source code and deploy it using the deploy shell file
+
+name: Vue Deployment
+
+on:
+  push:
+    branches: [deploy]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Checkout branch
+        uses: actions/checkout@v2
+
+      - name: Installing...
+        run: npm ci
+
+      - name: Linting...
+        run: npm run lint
+
+      - name: Building...
+        run: npm run build
+
+      - name: Deploying...
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: ohjiho.dev
+          force_orphan: true
+          user_name: jh8oh
+          user_email: ohjiho.ca@github.com
+          publish_branch: master
+
+        env:
+          CI: true
