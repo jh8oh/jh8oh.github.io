@@ -35,6 +35,7 @@ header {
     #logo {
         flex: 0 0 auto;
         cursor: pointer;
+        @extend %no-underline;
 
         @include breakpoint($breakpoint-small) {
             float: left;
@@ -123,7 +124,7 @@ header {
             align-items: center;
             padding: 12px 8px;
             color: $color-on-background-dark;
-            text-decoration: none;
+            @extend %no-underline;
 
             &:after {
                 @include shutter-border-horizontal(2px, 54px);
