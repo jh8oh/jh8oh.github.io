@@ -5,6 +5,10 @@
 #not-found {
     background-color: $color-background-dark;
 
+    @include breakpoint($phone-breakpoint) {
+        min-height: $content-height;
+    }
+
     &-content {
         @extend %absolute-center;
         display: flex;
