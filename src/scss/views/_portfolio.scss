@@ -7,82 +7,110 @@
         @extend %page-content-default-margin;
     }
 
-    #archive {
-        &-projects {
-            @extend %no-decoration;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-evenly;
+    #archive-projects {
+        @extend %no-decoration;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        row-gap: 12px;
 
-            > li {
-                position: relative;
-                flex-basis: 31%;
-                margin-bottom: 16px;
-                border-radius: 2px;
-                box-shadow: 2px 2px 4px 0 $color-on-background;
-                @include border-loop($color-primary);
+        > li {
+            position: relative;
+            flex-basis: 31%;
+            box-shadow: 1px 1px 4px 0 $color-on-background;
+            @include border-loop($color-primary);
 
-                &:hover {
-                    transform: scale(1.05);
-                    @include transition(transform 0.2s ease-in-out);
-                }
+            &:hover {
+                transform: scale(1.05);
+                @include transition(transform 0.2s ease-in-out);
+            }
 
-                $breakpoint-two-items: 1450px;
-                $breakpoint-one-item: 800px;
+            $breakpoint-two-items: 1780px;
+            $breakpoint-one-item: 800px;
 
-                @include breakpoint($breakpoint-two-items) {
-                    flex-basis: 46%;
-                }
+            @include breakpoint($breakpoint-two-items) {
+                flex-basis: 46%;
+            }
 
-                @include breakpoint($breakpoint-one-item) {
-                    flex-basis: 93%;
-                }
+            @include breakpoint($breakpoint-one-item) {
+                flex-basis: 93%;
+            }
+        }
+    }
+
+    .archived-project-card {
+        $breakpoint: 1780px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(calc(100% - 56px));
+        padding: 28px;
+
+        @include breakpoint($breakpoint) {
+            position: static;
+        }
+
+        &-wrapper {
+            position: relative;
+            height: 0;
+            padding-top: 100%;
+            overflow: hidden;
+
+            @include breakpoint($breakpoint) {
+                height: auto;
+                padding-top: 0;
             }
         }
 
-        .archived-project-card {
-            padding: 28px;
+        &-heading {
+            height: 28px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
 
-            &-heading {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-between;
+        &-links {
+            @extend %no-decoration;
+            display: inline-block;
+
+            a {
+                @extend %no-underline;
             }
 
-            &-links {
-                @extend %no-decoration;
-                display: inline-block;
+            img {
+                @include size(28px);
+            }
+        }
 
-                a {
-                    @extend %no-underline;
+        p {
+            margin: 16px 0 12px;
+        }
+
+        &-tags {
+            @extend %no-decoration;
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+
+            @include breakpoint($breakpoint) {
+                position: static;
+            }
+
+            li {
+                color: $color-secondary-dark;
+                margin-right: 4px;
+
+                code {
+                    font-size: 12px;
                 }
 
-                img {
-                    @include size(28px);
-                }
-            }
-
-            p {
-                margin: 12px 0;
-            }
-
-            &-tags {
-                @extend %no-decoration;
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: flex-start;
-
-                li {
-                    color: $color-secondary-dark;
-                    margin-right: 4px;
-
-                    code {
-                        font-size: 12px;
-                    }
-
-                    &:last-child {
-                        margin-right: 0;
-                    }
+                &:last-child {
+                    margin-right: 0;
                 }
             }
         }

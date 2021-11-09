@@ -6,7 +6,7 @@
           <a :href="link.to" target="_blank">
             <HoverIcon :unhoveredIcon="link.unhoveredIcon" :hoveredIcon="link.hoveredIcon" />
           </a>
-          <span class="body-2">{{ link.title }}</span>
+          <span class="body2">{{ link.title }}</span>
         </li>
       </ul>
     </nav>

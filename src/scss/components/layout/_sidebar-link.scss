@@ -57,7 +57,6 @@
         span {
             opacity: 0;
             margin-left: 6px;
-            font-family: $code-font-family;
             color: $color-primary;
             @include animation(none);
 
