@@ -1,17 +1,19 @@
 <template>
   <div class="featured-project-card">
-    <transition-group name="slide">
-      <img
-        class="featured-project-card-img"
-        v-for="index in [currentImage]"
-        :key="index"
-        :src="project.imageLinks[currentImage]"
-      />
-    </transition-group>
+    <div class="featured-project-card-img-wrapper">
+      <transition-group name="slide" mode="out-in">
+        <img
+          class="featured-project-card-img"
+          v-for="index in [currentImage]"
+          :key="index"
+          :src="project.imageLinks[currentImage]"
+        />
+      </transition-group>
+    </div>
     <div>
       <div class="featured-project-card-heading">
         <h3>{{ project.title }}</h3>
-        <ul>
+        <ul class="featured-project-card-links">
           <li v-for="link in project.links" :key="link.to">
             <a :href="link.to" target="_blank">
               <HoverIcon :unhoveredIcon="link.unhoveredIcon" :hoveredIcon="link.hoveredIcon" />

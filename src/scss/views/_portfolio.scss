@@ -7,6 +7,13 @@
         @extend %page-content-default-margin;
     }
 
+    #featured-projects {
+        @extend %no-decoration;
+        display: flex;
+        flex-flow: column nowrap;
+        margin-bottom: 100px;
+    }
+
     #archive-projects {
         @extend %no-decoration;
         display: flex;
@@ -38,6 +45,90 @@
         }
     }
 
+    %project-card-heading {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    %project-card-links {
+        @extend %no-decoration;
+        display: inline-block;
+
+        li {
+            display: inline-block;
+        }
+
+        a {
+            @extend %no-underline;
+        }
+
+        img {
+            @include size(28px);
+        }
+    }
+
+    %project-card-description {
+        margin: 16px 0 12px;
+    }
+
+    %project-card-tags {
+        @extend %no-decoration;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        column-gap: 4px;
+
+        li {
+            color: $color-secondary-dark;
+
+            code {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .featured-project-card {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        column-gap: 16px;
+
+        &-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30vw;
+            height: 17vw;
+
+            &-wrapper {
+                flex: 0 0 auto;
+                position: relative;
+                overflow: hidden;
+                width: 30vw;
+                height: 17vw;
+                box-shadow: 1px 1px 4px 0 $color-on-background;
+            }
+        }
+
+        &-heading {
+            height: 36px;
+            @extend %project-card-heading;
+        }
+
+        p {
+            @extend %project-card-description;
+        }
+
+        &-links {
+            @extend %project-card-links;
+        }
+
+        &-tags {
+            @extend %project-card-tags;
+        }
+    }
+
     .archived-project-card {
         $breakpoint: 1780px;
 
@@ -65,53 +156,26 @@
 
         &-heading {
             height: 28px;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
+            @extend %project-card-heading;
         }
 
         &-links {
-            @extend %no-decoration;
-            display: inline-block;
-
-            a {
-                @extend %no-underline;
-            }
-
-            img {
-                @include size(28px);
-            }
+            @extend %project-card-links;
         }
 
         p {
-            margin: 16px 0 12px;
+            @extend %project-card-description;
         }
 
         &-tags {
-            @extend %no-decoration;
+            @extend %project-card-tags;
             position: absolute;
             left: 28px;
             right: 28px;
             bottom: 28px;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: flex-start;
 
             @include breakpoint($breakpoint) {
                 position: static;
-            }
-
-            li {
-                color: $color-secondary-dark;
-                margin-right: 4px;
-
-                code {
-                    font-size: 12px;
-                }
-
-                &:last-child {
-                    margin-right: 0;
-                }
             }
         }
     }

@@ -58,3 +58,31 @@
         @include animation(flicker-transition-leave 0.5s forwards);
     }
 }
+
+// Slide in/out
+.slide {
+    &-enter-active,
+    &-leave-active {
+        @include transition(transform 1s ease-in-out);
+    }
+
+    &-enter {
+        &-from {
+            transform: translateX(100%);
+        }
+
+        &-to {
+            transform: translateX(0%);
+        }
+    }
+
+    &-leave {
+        &-from {
+            transform: translateX(0%);
+        }
+
+        &-to {
+            transform: translateX(-100%);
+        }
+    }
+}
