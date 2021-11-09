@@ -7,82 +7,94 @@
         @extend %page-content-default-margin;
     }
 
-    #archive {
-        &-projects {
-            @extend %no-decoration;
+    #archive-projects {
+        @extend %no-decoration;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        row-gap: 12px;
+
+        > li {
+            position: relative;
+            flex-basis: 31%;
+            box-shadow: 1px 1px 4px 0 $color-on-background;
+            @include border-loop($color-primary);
+
+            &:hover {
+                transform: scale(1.05);
+                @include transition(transform 0.2s ease-in-out);
+            }
+
+            $breakpoint-two-items: 1450px;
+            $breakpoint-one-item: 800px;
+
+            @include breakpoint($breakpoint-two-items) {
+                flex-basis: 46%;
+            }
+
+            @include breakpoint($breakpoint-one-item) {
+                flex-basis: 93%;
+            }
+        }
+    }
+
+    .archived-project-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(calc(100% - 56px));
+        padding: 28px;
+
+        &-wrapper {
+            position: relative;
+            height: 0;
+            padding-top: 100%;
+            overflow: hidden;
+        }
+
+        &-heading {
             display: flex;
-            flex-flow: row wrap;
-            justify-content: space-evenly;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
 
-            > li {
-                position: relative;
-                flex-basis: 31%;
-                margin-bottom: 16px;
-                border-radius: 2px;
-                box-shadow: 2px 2px 4px 0 $color-on-background;
-                @include border-loop($color-primary);
+        &-links {
+            @extend %no-decoration;
+            display: inline-block;
 
-                &:hover {
-                    transform: scale(1.05);
-                    @include transition(transform 0.2s ease-in-out);
-                }
+            a {
+                @extend %no-underline;
+            }
 
-                $breakpoint-two-items: 1450px;
-                $breakpoint-one-item: 800px;
-
-                @include breakpoint($breakpoint-two-items) {
-                    flex-basis: 46%;
-                }
-
-                @include breakpoint($breakpoint-one-item) {
-                    flex-basis: 93%;
-                }
+            img {
+                @include size(28px);
             }
         }
 
-        .archived-project-card {
-            padding: 28px;
+        p {
+            margin: 12px 0;
+        }
 
-            &-heading {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-between;
-            }
+        &-tags {
+            @extend %no-decoration;
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
 
-            &-links {
-                @extend %no-decoration;
-                display: inline-block;
+            li {
+                color: $color-secondary-dark;
+                margin-right: 4px;
 
-                a {
-                    @extend %no-underline;
+                code {
+                    font-size: 12px;
                 }
 
-                img {
-                    @include size(28px);
-                }
-            }
-
-            p {
-                margin: 12px 0;
-            }
-
-            &-tags {
-                @extend %no-decoration;
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: flex-start;
-
-                li {
-                    color: $color-secondary-dark;
-                    margin-right: 4px;
-
-                    code {
-                        font-size: 12px;
-                    }
-
-                    &:last-child {
-                        margin-right: 0;
-                    }
+                &:last-child {
+                    margin-right: 0;
                 }
             }
         }
