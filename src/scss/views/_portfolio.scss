@@ -89,10 +89,18 @@
     }
 
     .featured-project-card {
+        $breakpoint-1: 1200px;
+        $breakpoint-2: 1000px;
+
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         column-gap: 16px;
+
+        @include breakpoint($breakpoint-2) {
+            flex-flow: column nowrap;
+            row-gap: 16px;
+        }
 
         &-img {
             position: absolute;
@@ -101,6 +109,16 @@
             width: 30vw;
             height: 17vw;
 
+            @include breakpoint($breakpoint-1) {
+                width: 40vw;
+                height: 22.5vw;
+            }
+
+            @include breakpoint($breakpoint-2) {
+                width: 72vw;
+                height: 40.5vw;
+            }
+
             &-wrapper {
                 flex: 0 0 auto;
                 position: relative;
@@ -108,24 +126,46 @@
                 width: 30vw;
                 height: 17vw;
                 box-shadow: 1px 1px 4px 0 $color-on-background;
+
+                @include breakpoint($breakpoint-1) {
+                    width: 40vw;
+                    height: 22.5vw;
+                }
+
+                @include breakpoint($breakpoint-2) {
+                    width: 72vw;
+                    height: 40.5vw;
+                }
             }
         }
 
         &-heading {
             height: 36px;
             @extend %project-card-heading;
-        }
 
-        p {
-            @extend %project-card-description;
+            @include breakpoint($breakpoint-2) {
+                margin: 0 32px;
+            }
         }
 
         &-links {
             @extend %project-card-links;
         }
 
+        p {
+            @extend %project-card-description;
+
+            @include breakpoint($breakpoint-2) {
+                margin: 16px 32px 12px;
+            }
+        }
+
         &-tags {
             @extend %project-card-tags;
+
+            @include breakpoint($breakpoint-2) {
+                margin: 0 32px;
+            }
         }
     }
 
