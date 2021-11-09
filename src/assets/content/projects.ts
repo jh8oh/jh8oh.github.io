@@ -19,7 +19,7 @@ class ExternalLink extends ProjectLink {
   }
 }
 
-class Project {
+export class Project {
   constructor(
     private title: string,
     private imageLinks: string[],
@@ -27,6 +27,10 @@ class Project {
     private description: string,
     private tags: string[]
   ) {}
+
+  getImageLinkLength(): number {
+    return this.imageLinks.length;
+  }
 }
 
 export const oneStoryADay = new Project(
@@ -77,14 +81,14 @@ export const colorPicker = new Project(
   ["Android", "Bintray"]
 );
 
+import dexGraphHome from "@/assets/img/portfolio/dexgraph/home.png";
+import dexGraphMangaList from "@/assets/img/portfolio/dexgraph/mangalist.png";
+import dexGraphStats from "@/assets/img/portfolio/dexgraph/stats.png";
+import dexGraphStaff from "@/assets/img/portfolio/dexgraph/staff.png";
+
 export const dexGraph = new Project(
   "DexGraph",
-  [
-    "@/assets/img/portfolio/dexgraph/home.png",
-    "@/assets/img/portfolio/dexgraph/mangalist.png",
-    "@/assets/img/portfolio/dexgraph/stats.png",
-    "@/assets/img/portfolio/dexgraph/staff.png",
-  ],
+  [dexGraphHome, dexGraphMangaList, dexGraphStats, dexGraphStaff],
   [
     new GithubLink("https://github.com/jh8oh/dexgraph"),
     new ExternalLink("https://dexgraph.netlify.app/"),

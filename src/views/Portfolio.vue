@@ -3,8 +3,10 @@
     <div id="portfolio-content" class="page-content">
       <h1>Portfolio</h1>
       <section id="featured">
-        <ul>
-          <li v-for="project in featuredProjects" :key="project.title"></li>
+        <ul id="featured-projects">
+          <li v-for="project in featuredProjects" :key="project.title">
+            <FeaturedProjectCard :project="project" />
+          </li>
         </ul>
       </section>
       <section id="archive">
@@ -22,6 +24,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import FeaturedProjectCard from "@/components/views/portfolio/FeaturedProjectCard.vue";
 import ArchivedProjectCard from "@/components/views/portfolio/ArchivedProjectCard.vue";
 import Footer from "@/components/layout/Footer.vue";
 
@@ -32,16 +35,18 @@ import {
   personalWebsiteV1,
   cppChess,
   colorPicker,
+  dexGraph,
 } from "@/assets/content/projects";
 
 @Options({
   components: {
+    FeaturedProjectCard,
     ArchivedProjectCard,
     Footer,
   },
 })
 export default class Portfolio extends Vue {
-  private featuredProjects = [];
+  private featuredProjects = [dexGraph];
   private archivedProjects = [
     oneStoryADay,
     weekPlanner,

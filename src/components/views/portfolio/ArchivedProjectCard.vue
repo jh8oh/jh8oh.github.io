@@ -23,19 +23,11 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import { Project } from "@/assets/content/projects";
 import HoverIcon from "@/components/HoverIcon.vue";
 
 class Prop {
-  project!: {
-    title: string;
-    links: {
-      to: string;
-      unhoveredIcon: string;
-      hoveredIcon: string;
-    };
-    description: string;
-    tags: string[];
-  };
+  project!: Project;
 }
 
 @Options({
