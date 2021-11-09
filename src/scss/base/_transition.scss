@@ -47,3 +47,14 @@
 .view-slide-rtl {
     @include view-slide-transition(-100%);
 }
+
+// Flicker in/out
+.flicker {
+    &-enter-active {
+        @include animation(flicker-transition-enter 0.2s forwards);
+    }
+
+    &-leave-active {
+        @include animation(flicker-transition-leave 0.5s forwards);
+    }
+}
