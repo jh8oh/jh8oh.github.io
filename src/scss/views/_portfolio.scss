@@ -7,83 +7,215 @@
         @extend %page-content-default-margin;
     }
 
-    #archive {
-        &-projects {
-            @extend %no-decoration;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-evenly;
+    #featured-projects {
+        @extend %no-decoration;
+        display: flex;
+        flex-flow: column nowrap;
+        margin-bottom: 100px;
+    }
 
-            > li {
+    #archive-projects {
+        @extend %no-decoration;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        row-gap: 12px;
+
+        > li {
+            position: relative;
+            flex-basis: 31%;
+            box-shadow: 1px 1px 4px 0 $color-on-background;
+            @include border-loop($color-primary);
+
+            &:hover {
+                transform: scale(1.05);
+                @include transition(transform 0.2s ease-in-out);
+            }
+
+            $breakpoint-two-items: 1780px;
+            $breakpoint-one-item: 800px;
+
+            @include breakpoint($breakpoint-two-items) {
+                flex-basis: 46%;
+            }
+
+            @include breakpoint($breakpoint-one-item) {
+                flex-basis: 93%;
+            }
+        }
+    }
+
+    %project-card-heading {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    %project-card-links {
+        @extend %no-decoration;
+        display: inline-block;
+
+        li {
+            display: inline-block;
+        }
+
+        a {
+            @extend %no-underline;
+        }
+
+        img {
+            @include size(28px);
+        }
+    }
+
+    %project-card-description {
+        margin: 16px 0 12px;
+    }
+
+    %project-card-tags {
+        @extend %no-decoration;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        column-gap: 4px;
+
+        li {
+            color: $color-secondary-dark;
+
+            code {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .featured-project-card {
+        $breakpoint-1: 1200px;
+        $breakpoint-2: 1000px;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        column-gap: 16px;
+
+        @include breakpoint($breakpoint-2) {
+            flex-flow: column nowrap;
+            row-gap: 16px;
+        }
+
+        &-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30vw;
+            height: 17vw;
+
+            @include breakpoint($breakpoint-1) {
+                width: 40vw;
+                height: 22.5vw;
+            }
+
+            @include breakpoint($breakpoint-2) {
+                width: 72vw;
+                height: 40.5vw;
+            }
+
+            &-wrapper {
+                flex: 0 0 auto;
                 position: relative;
-                flex-basis: 31%;
-                margin-bottom: 16px;
-                border-radius: 2px;
-                box-shadow: 2px 2px 4px 0 $color-on-background;
-                @include border-loop($color-primary);
+                overflow: hidden;
+                width: 30vw;
+                height: 17vw;
+                box-shadow: 1px 1px 4px 0 $color-on-background;
 
-                &:hover {
-                    transform: scale(1.05);
-                    @include transition(transform 0.2s ease-in-out);
+                @include breakpoint($breakpoint-1) {
+                    width: 40vw;
+                    height: 22.5vw;
                 }
 
-                $breakpoint-two-items: 1450px;
-                $breakpoint-one-item: 800px;
-
-                @include breakpoint($breakpoint-two-items) {
-                    flex-basis: 46%;
-                }
-
-                @include breakpoint($breakpoint-one-item) {
-                    flex-basis: 93%;
+                @include breakpoint($breakpoint-2) {
+                    width: 72vw;
+                    height: 40.5vw;
                 }
             }
         }
 
-        .archived-project-card {
-            padding: 28px;
+        &-heading {
+            height: 36px;
+            @extend %project-card-heading;
 
-            &-heading {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-between;
+            @include breakpoint($breakpoint-2) {
+                margin: 0 32px;
             }
+        }
 
-            &-links {
-                @extend %no-decoration;
-                display: inline-block;
+        &-links {
+            @extend %project-card-links;
+        }
 
-                a {
-                    @extend %no-underline;
-                }
+        p {
+            @extend %project-card-description;
 
-                img {
-                    @include size(28px);
-                }
+            @include breakpoint($breakpoint-2) {
+                margin: 16px 32px 12px;
             }
+        }
 
-            p {
-                margin: 12px 0;
+        &-tags {
+            @extend %project-card-tags;
+
+            @include breakpoint($breakpoint-2) {
+                margin: 0 32px;
             }
+        }
+    }
 
-            &-tags {
-                @extend %no-decoration;
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: flex-start;
+    .archived-project-card {
+        $breakpoint: 1780px;
 
-                li {
-                    color: $color-secondary-dark;
-                    margin-right: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(calc(100% - 56px));
+        padding: 28px;
 
-                    code {
-                        font-size: 12px;
-                    }
+        @include breakpoint($breakpoint) {
+            position: static;
+        }
 
-                    &:last-child {
-                        margin-right: 0;
-                    }
-                }
+        &-wrapper {
+            position: relative;
+            height: 0;
+            padding-top: 100%;
+            overflow: hidden;
+
+            @include breakpoint($breakpoint) {
+                height: auto;
+                padding-top: 0;
+            }
+        }
+
+        &-heading {
+            height: 28px;
+            @extend %project-card-heading;
+        }
+
+        &-links {
+            @extend %project-card-links;
+        }
+
+        p {
+            @extend %project-card-description;
+        }
+
+        &-tags {
+            @extend %project-card-tags;
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+
+            @include breakpoint($breakpoint) {
+                position: static;
             }
         }
     }
