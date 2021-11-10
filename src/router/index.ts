@@ -32,6 +32,22 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    let position = { left: 0, top: 0 };
+
+    // Keep scroll position when using browser buttons
+    if (savedPosition) {
+      position = savedPosition;
+    }
+
+    // Workaround for transitions scrolling to the top of the page
+    // However, there are still some problems being fixed by the vue team
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(position);
+      }, 400);
+    });
+  },
 });
 
 router.afterEach((to, from) => {
