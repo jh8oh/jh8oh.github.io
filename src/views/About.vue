@@ -48,7 +48,7 @@ import { Options, Vue } from "vue-class-component";
 import ExperienceCard from "@/components/views/about/ExperienceCard.vue";
 import Footer from "@/components/layout/Footer.vue";
 
-import { theScore, innovapost, dcCanada } from "@/assets/content/experience";
+import { nearside, theScore, innovapost, dcCanada } from "@/assets/content/experience";
 
 @Options({
   components: {
@@ -57,7 +57,7 @@ import { theScore, innovapost, dcCanada } from "@/assets/content/experience";
   },
 })
 export default class About extends Vue {
-  private experiences = [theScore, innovapost, dcCanada];
-  private activeExperience = theScore;
+  private experiences = [nearside, theScore, innovapost, dcCanada];
+  private activeExperience = nearside;
 }
 </script>
