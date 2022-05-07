@@ -12,14 +12,14 @@
   #greeting {
     @extend %absolute-center;
     width: 75vw;
-    max-width: 420px;
+    max-width: 450px;
     text-align: center;
 
     #name {
-      display: inline-block;
-      margin: 20px 0;
+      display: block;
       @include display-text(min(max(80px, 18vw), 144px), min(max(100px, 22vw), 180px));
       transform: rotate(-5deg);
+      transform-origin: top right;
     }
 
     span:not(#name) {
