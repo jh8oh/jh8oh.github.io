@@ -41,8 +41,9 @@
     @if $underline-size != 0 {
         &::after {
             position: absolute;
-            left: 20%;
-            bottom: -45%;
+            left: 40%;
+            bottom: -48%;
+            transform: translate(-50%, 0);
             content: "u";
             @include text($display-swash-font-family, $underline-size, 1, -1px, none, transparent);
             white-space: nowrap;
