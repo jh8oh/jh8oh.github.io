@@ -36,7 +36,7 @@ $code-font-family: "Share Tech Mono", monospace;
 
 // Dimesions
 $header-height: 56px;
-$footer-height: 24px;
+$footer-height: 30px;
 $phone-footer-height: 72px;
 $content-height: calc(100vh - #{$header-height});
 $content-phone-height: calc(100vh - #{$header-height} - #{$phone-footer-height});
