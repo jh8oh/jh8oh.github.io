@@ -19,6 +19,10 @@ body {
 
     &-content {
         padding-bottom: $footer-height;
+
+        &.default {
+            @extend %page-content-default-margin;
+        }
     }
 
     @include breakpoint($phone-breakpoint) {

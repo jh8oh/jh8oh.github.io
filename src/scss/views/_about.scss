@@ -3,10 +3,6 @@
 // ---------------------------------------------------------------------------
 
 #about {
-    &-content {
-        @extend %page-content-default-margin;
-    }
-
     #intro {
         $breakpoint: 1200px;
         display: flex;
