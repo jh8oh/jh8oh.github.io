@@ -4,14 +4,14 @@
 
 // General margin for standard page content
 %page-content-default-margin {
-    margin: 80px 24vw 40px;
+    margin: 60px 24vw 40px;
 
     @include breakpoint($tablet-breakpoint) {
-        margin: 40px 14vw 20px;
+        margin: 30px 14vw 20px;
     }
 
     @include breakpoint($phone-breakpoint) {
-        margin: 40px 4vw 20px;
+        margin: 30px 4vw 20px;
     }
 }
 

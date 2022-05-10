@@ -1,6 +1,6 @@
 <template>
   <div id="portfolio" class="page">
-    <div id="portfolio-content" class="page-content">
+    <div class="page-content default">
       <h1>Portfolio</h1>
       <section id="featured">
         <ul id="featured-projects">

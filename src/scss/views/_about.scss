@@ -3,10 +3,6 @@
 // ---------------------------------------------------------------------------
 
 #about {
-    &-content {
-        @extend %page-content-default-margin;
-    }
-
     #intro {
         $breakpoint: 1200px;
         display: flex;
@@ -21,6 +17,7 @@
             width: 40%;
             max-width: 320px;
             margin-left: 52px;
+            box-shadow: 1px 1px 4px 0 $color-on-background;
 
             @include breakpoint($breakpoint) {
                 width: 80%;
@@ -29,15 +26,32 @@
             }
         }
 
-        p > span {
+        #wave {
+            $count: 32;
+            $duration: 0.4;
+
             white-space: nowrap;
+
+            span {
+                display: inline-block;
+                color: transparent;
+                background: $color-secondary-gradient;
+                background-clip: text;
+                @include animation(wave #{$duration}s infinite alternate);
+            }
+
+            @for $i from 0 to $count {
+                :nth-child(#{$count}n + #{$i}) {
+                    animation-delay: -#{($count - $i) * 2 * $duration / $count}s;
+                }
+            }
         }
     }
 
     #experience {
         $breakpoint: 840px;
 
-        margin-top: 100px;
+        margin-top: 60px;
 
         @include breakpoint($tablet-breakpoint) {
             margin-top: 48px;
