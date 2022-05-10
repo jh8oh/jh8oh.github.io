@@ -5,15 +5,29 @@
       <section id="intro">
         <img src="../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
         <p>
-          Hello! I'm Ji Ho Oh (오지호) but I also go by Jay. I'm a 3rd-year undergrad at the
-          University of Waterloo.<br /><br />
-          I like creating user-facing software mostly because I want the things I make to look
-          <span><em>a e s t h e t i c</em></span
-          >. This has led to me building websites, Android applications, and games. At the moment, I
-          am focusing on learning new libraries and frameworks over specializing in one specific
-          aspect. However, I am also looking for a field that might capture my interest and allow me
-          to dive deeper.<br /><br />Aside from coding, my hobbies include playing video games,
-          reading manga, and world-building.
+          Hello! My name's <strong>Ji Ho Oh</strong> (오지호) but I go by <strong>Jay</strong> as
+          well. I'm a 4th-year Computational Mathematrics undergrad at the University of
+          Waterloo.<br /><br />
+          I like the things I make to be
+          <span id="wave">
+            <span>『</span>
+            <span>ａ</span>
+            <span>ｅ</span>
+            <span>ｓ</span>
+            <span>ｔ</span>
+            <span>ｈ</span>
+            <span>ｅ</span>
+            <span>ｔ</span>
+            <span>ｉ</span>
+            <span>ｃ</span>
+            <span>』</span>
+          </span>
+          which has led me to designing and developing user-facing applications, such as websites or
+          Android apps. At the moment, I'm focusing on expanding my repetoire of libraries and
+          frameworks over specializing in one specific aspect. However, I am also looking for a
+          field that might capture my interest and lead me to diving deeper.<br /><br />
+          Apart from coding, I have a wide range of creative interests: landscape art, shot
+          composition, and most of all music (big indie rock fan).
         </p>
       </section>
       <section id="experience">

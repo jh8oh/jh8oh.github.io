@@ -25,8 +25,25 @@
             }
         }
 
-        p > span {
+        #wave {
+            $count: 32;
+            $duration: 0.4;
+
             white-space: nowrap;
+
+            span {
+                display: inline-block;
+                color: transparent;
+                background: $color-secondary-gradient;
+                background-clip: text;
+                @include animation(wave #{$duration}s infinite alternate);
+            }
+
+            @for $i from 0 to $count {
+                :nth-child(#{$count}n + #{$i}) {
+                    animation-delay: -#{($count - $i) * 2 * $duration / $count}s;
+                }
+            }
         }
     }
 
