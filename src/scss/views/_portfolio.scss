@@ -3,15 +3,14 @@
 // ---------------------------------------------------------------------------
 
 #portfolio {
-    &-content {
-        @extend %page-content-default-margin;
-    }
-
     #featured-projects {
         @extend %no-decoration;
         display: flex;
         flex-flow: column nowrap;
-        margin-bottom: 100px;
+    }
+
+    #archive {
+        margin-top: 60px;
     }
 
     #archive-projects {

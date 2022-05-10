@@ -196,3 +196,13 @@
         }
     }
 }
+
+// Waving text animation
+@include keyframes(wave) {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}

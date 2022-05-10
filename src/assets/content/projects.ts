@@ -81,10 +81,10 @@ export const colorPicker = new Project(
   ["Android", "Bintray"]
 );
 
-import dexGraphHome from "@/assets/img/portfolio/dexgraph/home.png";
-import dexGraphMangaList from "@/assets/img/portfolio/dexgraph/mangalist.png";
-import dexGraphStats from "@/assets/img/portfolio/dexgraph/stats.png";
-import dexGraphStaff from "@/assets/img/portfolio/dexgraph/staff.png";
+import dexGraphHome from "@/assets/img/portfolio/dexgraph/home.jpg";
+import dexGraphMangaList from "@/assets/img/portfolio/dexgraph/mangalist.jpg";
+import dexGraphStats from "@/assets/img/portfolio/dexgraph/stats.jpg";
+import dexGraphStaff from "@/assets/img/portfolio/dexgraph/staff.jpg";
 
 export const dexGraph = new Project(
   "DexGraph",
