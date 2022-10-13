@@ -6,7 +6,7 @@
         I'm always open for any work opportunities or collaborations. If you want to get in touch or
         just want to share some spicy memes, send me a message by using the form below or by
         emailing me directly at
-        <a href="mailto: ohjiho.sk@gmail.com">ohjiho.sk@gmail.com</a>.
+        <a href="mailto: ohjiho.ca@gmail.com">ohjiho.ca@gmail.com</a>.
       </p>
       <form id="contact-form" ref="form">
         <div id="sender-info">
