@@ -24,9 +24,9 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import FeaturedProjectCard from "@/components/views/portfolio/FeaturedProjectCard.vue";
-import ArchivedProjectCard from "@/components/views/portfolio/ArchivedProjectCard.vue";
 import Footer from "@/components/layout/Footer.vue";
+import FeaturedProjectCard from "./FeaturedProjectCard.vue";
+import ArchivedProjectCard from "./ArchivedProjectCard.vue";
 
 import {
   oneStoryADay,

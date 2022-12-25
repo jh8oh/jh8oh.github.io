@@ -3,7 +3,7 @@
     <div class="page-content default">
       <h1>About Me</h1>
       <section id="intro">
-        <img src="../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
+        <img src="../../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
         <p>
           Hello! My name's <strong>Ji Ho Oh</strong> (오지호) but I go by <strong>Jay</strong> as
           well. I'm a 4th-year Computational Mathematrics undergrad at the University of
@@ -59,9 +59,8 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import ExperienceCard from "@/components/views/about/ExperienceCard.vue";
 import Footer from "@/components/layout/Footer.vue";
-
+import ExperienceCard from "./ExperienceCard.vue";
 import { nearside, theScore, innovapost, dcCanada } from "@/assets/content/experience";
 
 @Options({
