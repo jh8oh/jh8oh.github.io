@@ -28,15 +28,7 @@ import Footer from "@/components/layout/Footer.vue";
 import FeaturedProjectCard from "./FeaturedProjectCard.vue";
 import ArchivedProjectCard from "./ArchivedProjectCard.vue";
 
-import {
-  oneStoryADay,
-  weekPlanner,
-  yearFacts,
-  personalWebsiteV1,
-  cppChess,
-  colorPicker,
-  dexGraph,
-} from "@/assets/content/projects";
+import { featuredProjects, archivedProjects } from "@/assets/content/projects";
 
 @Options({
   components: {
@@ -46,14 +38,7 @@ import {
   },
 })
 export default class Portfolio extends Vue {
-  private featuredProjects = [dexGraph];
-  private archivedProjects = [
-    oneStoryADay,
-    weekPlanner,
-    yearFacts,
-    personalWebsiteV1,
-    cppChess,
-    colorPicker,
-  ];
+  private featuredProjects = featuredProjects;
+  private archivedProjects = archivedProjects;
 }
 </script>

@@ -40,7 +40,7 @@ import dexGraphMangaList from "@/assets/img/portfolio/dexgraph/mangalist.jpg";
 import dexGraphStats from "@/assets/img/portfolio/dexgraph/stats.jpg";
 import dexGraphStaff from "@/assets/img/portfolio/dexgraph/staff.jpg";
 
-export const dexGraph = new Project(
+const dexGraph = new Project(
   "DexGraph",
   [dexGraphHome, dexGraphMangaList, dexGraphStats, dexGraphStaff],
   [
@@ -56,20 +56,22 @@ import steamRecRate from "@/assets/img/portfolio/steamrec/rate.jpg";
 import steamRecSettings from "@/assets/img/portfolio/steamrec/settings.jpg";
 import steamRecRecommend from "@/assets/img/portfolio/steamrec/recommend.jpg";
 
-export const steamRec = new Project(
+const steamRec = new Project(
   "SteamRec",
   [steamRecLogin, steamRecRate, steamRecSettings, steamRecRecommend],
   [
     new GithubLink("https://github.com/jh8oh/steamrec"),
     new ExternalLink("https://dog-sundress.cyclic.app/"),
   ],
-  "A web app that recommends Steam apps based on your rating for the apps in your library. Uses MongoDB's search index to find games with similar tags, genres, categories, developers, and publishers.",
-  ["Node.js", "Express", "express-session", "passport", "MongoDB", "Vue"]
+  "A web app that recommends Steam apps based on your rating for the apps in your library. Uses the <a href='https://steamapi.xpaw.me/'>Steam API</a> and <a href='https://www.mongodb.com/basics/search-index'>MongoDB's search index</a> to find similar games.",
+  ["Node.js", "Express", "express-session.js", "passport.js", "MongoDB", "Vue"]
 );
+
+export const featuredProjects = [dexGraph, steamRec];
 
 // Archived Projects
 
-export const oneStoryADay = new Project(
+const oneStoryADay = new Project(
   "One Story a Day",
   [],
   [],
@@ -77,7 +79,7 @@ export const oneStoryADay = new Project(
   ["Android", "OAuth", "WordPress API"]
 );
 
-export const weekPlanner = new Project(
+const weekPlanner = new Project(
   "Week Planner",
   [],
   [new GithubLink("https://github.com/jh8oh/week-planner")],
@@ -85,7 +87,7 @@ export const weekPlanner = new Project(
   ["Android", "Room", "Dagger2", "Data Binding"]
 );
 
-export const yearFacts = new Project(
+const yearFacts = new Project(
   "Year Facts",
   [],
   [new GithubLink("https://github.com/jh8oh/year-facts")],
@@ -93,7 +95,7 @@ export const yearFacts = new Project(
   ["Android", "Retrofit", "Koin", "View Binding"]
 );
 
-export const personalWebsiteV1 = new Project(
+const personalWebsiteV1 = new Project(
   "Personal Website",
   [],
   [new GithubLink("https://github.com/jh8oh/jh8oh.github.io")],
@@ -101,7 +103,7 @@ export const personalWebsiteV1 = new Project(
   ["Vue", "Vue Router", "TypeScript", "SCSS"]
 );
 
-export const cppChess = new Project(
+const cppChess = new Project(
   "C++ Chess",
   [],
   [new GithubLink("https://github.com/jh8oh/cpp-chess")],
@@ -109,10 +111,19 @@ export const cppChess = new Project(
   ["C++", "Linux Terminal"]
 );
 
-export const colorPicker = new Project(
+const colorPicker = new Project(
   "Colour Picker",
   [],
   [new GithubLink("https://github.com/jh8oh/colorpicker")],
   "A colour picker module for Android. Was hosted on Bintray until its deprecration.",
   ["Android", "Bintray"]
 );
+
+export const archivedProjects = [
+  oneStoryADay,
+  weekPlanner,
+  yearFacts,
+  personalWebsiteV1,
+  cppChess,
+  colorPicker,
+];
