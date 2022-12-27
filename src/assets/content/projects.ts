@@ -33,6 +33,42 @@ export class Project {
   }
 }
 
+// Featured Projects
+
+import dexGraphHome from "@/assets/img/portfolio/dexgraph/home.jpg";
+import dexGraphMangaList from "@/assets/img/portfolio/dexgraph/mangalist.jpg";
+import dexGraphStats from "@/assets/img/portfolio/dexgraph/stats.jpg";
+import dexGraphStaff from "@/assets/img/portfolio/dexgraph/staff.jpg";
+
+export const dexGraph = new Project(
+  "DexGraph",
+  [dexGraphHome, dexGraphMangaList, dexGraphStats, dexGraphStaff],
+  [
+    new GithubLink("https://github.com/jh8oh/dexgraph"),
+    new ExternalLink("https://dexgraph.netlify.app/"),
+  ],
+  "A web app that charts your MangaDex follows. View a breakdown of your library, including your most-read genres, themes, and authors. Uses the <a href='https://api.mangadex.org/docs.html'>MangaDex API v5</a>",
+  ["Vue", "VueX", "Chart.js", "Netlify"]
+);
+
+import steamRecLogin from "@/assets/img/portfolio/steamrec/login.jpg";
+import steamRecRate from "@/assets/img/portfolio/steamrec/rate.jpg";
+import steamRecSettings from "@/assets/img/portfolio/steamrec/settings.jpg";
+import steamRecRecommend from "@/assets/img/portfolio/steamrec/recommend.jpg";
+
+export const steamRec = new Project(
+  "SteamRec",
+  [steamRecLogin, steamRecRate, steamRecSettings, steamRecRecommend],
+  [
+    new GithubLink("https://github.com/jh8oh/steamrec"),
+    new ExternalLink("https://dog-sundress.cyclic.app/"),
+  ],
+  "A web app that recommends Steam apps based on your rating for the apps in your library. Uses MongoDB's search index to find games with similar tags, genres, categories, developers, and publishers.",
+  ["Node.js", "Express", "express-session", "passport", "MongoDB", "Vue"]
+);
+
+// Archived Projects
+
 export const oneStoryADay = new Project(
   "One Story a Day",
   [],
@@ -79,20 +115,4 @@ export const colorPicker = new Project(
   [new GithubLink("https://github.com/jh8oh/colorpicker")],
   "A colour picker module for Android. Was hosted on Bintray until its deprecration.",
   ["Android", "Bintray"]
-);
-
-import dexGraphHome from "@/assets/img/portfolio/dexgraph/home.jpg";
-import dexGraphMangaList from "@/assets/img/portfolio/dexgraph/mangalist.jpg";
-import dexGraphStats from "@/assets/img/portfolio/dexgraph/stats.jpg";
-import dexGraphStaff from "@/assets/img/portfolio/dexgraph/staff.jpg";
-
-export const dexGraph = new Project(
-  "DexGraph",
-  [dexGraphHome, dexGraphMangaList, dexGraphStats, dexGraphStaff],
-  [
-    new GithubLink("https://github.com/jh8oh/dexgraph"),
-    new ExternalLink("https://dexgraph.netlify.app/"),
-  ],
-  "A web app that charts your MangaDex follows. View a breakdown of your library, including your most-read genres, themes, and authors. Uses the <a href='https://api.mangadex.org/docs.html'>MangaDex API v5</a>",
-  ["Vue", "VueX", "Chart.js", "Netlify"]
 );
