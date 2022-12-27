@@ -37,8 +37,8 @@
             <div class="navigation-bar-scroll-wrapper">
               <h4 class="navigation-bar-content">
                 <li
-                  v-for="experience in experiences"
-                  :key="experience.id"
+                  v-for="(experience, index) in experiences"
+                  :key="index"
                   @click="activeExperience = experience"
                   :class="{ active: activeExperience === experience }"
                 >
@@ -48,7 +48,7 @@
             </div>
           </ul>
           <transition name="flicker" mode="out-in">
-            <ExperienceCard :key="activeExperience.id" :activeExperience="activeExperience" />
+            <ExperienceCard :activeExperience="activeExperience" />
           </transition>
         </div>
       </section>
@@ -61,7 +61,7 @@
 import { Options, Vue } from "vue-class-component";
 import Footer from "@/components/layout/Footer.vue";
 import ExperienceCard from "./ExperienceCard.vue";
-import { nearside, theScore, innovapost, dcCanada } from "@/assets/content/experience";
+import { experiences } from "@/assets/content/experience";
 
 @Options({
   components: {
@@ -70,7 +70,7 @@ import { nearside, theScore, innovapost, dcCanada } from "@/assets/content/exper
   },
 })
 export default class About extends Vue {
-  private experiences = [nearside, theScore, innovapost, dcCanada];
-  private activeExperience = nearside;
+  private experiences = experiences;
+  private activeExperience = experiences[0];
 }
 </script>

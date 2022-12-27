@@ -1,6 +1,5 @@
 class Experience {
   constructor(
-    private id: number,
     private employer: string,
     private position: string,
     private website: string,
@@ -10,7 +9,6 @@ class Experience {
 }
 
 export const dcCanada = new Experience(
-  0,
   "DC Canada Education Publishing",
   "Web/Android Developer",
   "https://www.dc-canada.ca/",
@@ -19,7 +17,6 @@ export const dcCanada = new Experience(
 );
 
 export const innovapost = new Experience(
-  1,
   "Innovapost",
   "Android/Innovation Developer",
   "https://innovapost.com/",
@@ -28,7 +25,6 @@ export const innovapost = new Experience(
 );
 
 export const theScore = new Experience(
-  2,
   "theScore Inc",
   "Android Developer",
   "https://www.thescore.com/",
@@ -37,10 +33,11 @@ export const theScore = new Experience(
 );
 
 export const nearside = new Experience(
-  3,
   "Nearside",
   "Android Developer",
   "https://www.nearside.com/",
   "Jan - Apr 2022",
   "Part of the Android mobile team for the Nearside app.<br /><ul><li>Assisted in the redesign of the mobile app as the company rebranded from Hatch to Nearside.</li><li>Worked on revamping the user signup flow to match the web flow so that users can seamlessly swap between the two. Uses <code>Persona</code>, an API that extracts data from personal identification.</li><li>Designed a new login flow to include biometric login functionality. Implemented using the <code>Biometrics</code> and <code>Cipher</code> library.</li></ul>"
 );
+
+export const experiences = [nearside, theScore, innovapost, dcCanada];
