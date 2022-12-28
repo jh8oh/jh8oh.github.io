@@ -7,6 +7,19 @@
         @extend %no-decoration;
         display: flex;
         flex-flow: column nowrap;
+        row-gap: 36px;
+
+        @include breakpoint(1000px) {
+            row-gap: 48px;
+        }
+
+        li:nth-child(2) .featured-project-card {
+            flex-flow: row-reverse nowrap;
+            
+            @include breakpoint(1000px) {
+                flex-flow: column nowrap;
+            }
+        }
     }
 
     #archive {
