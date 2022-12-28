@@ -8,7 +8,7 @@
           Hello! My name's <strong>Ji Ho Oh</strong> (오지호) but I go by <strong>Jay</strong> as
           well. I'm a 4th-year Computational Mathematrics undergrad at the University of
           Waterloo.<br /><br />
-          I like the things I make to be
+          I like making things that are
           <span id="wave">
             <span>『</span>
             <span>ａ</span>
@@ -22,12 +22,12 @@
             <span>ｃ</span>
             <span>』</span>
           </span>
-          which has led me to designing and developing user-facing applications, such as websites or
+          , which made me prefer to design and develop front-end applications, such as websites and
           Android apps. At the moment, I'm focusing on expanding my repetoire of libraries and
           frameworks over specializing in one specific aspect. However, I am also looking for a
-          field that might capture my interest and lead me to diving deeper.<br /><br />
-          Apart from coding, I have a wide range of creative interests: landscape art, shot
-          composition, and most of all music (big indie rock fan).
+          field that might capture my interest and lead me to dive deeper.<br /><br />
+          Apart from coding, I have a wide range of creative interests: photography, world-building,
+          and electric guitar (big indie rock fan).
         </p>
       </section>
       <section id="experience">
