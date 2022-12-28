@@ -11,15 +11,10 @@
 
 <script lang="ts">
 import { Vue } from "vue-class-component";
+import { Experience } from "@/assets/content/experience";
 
 class Props {
-  activeExperience!: {
-    position: string;
-    website: string;
-    employer: string;
-    dates: string;
-    description: string;
-  };
+  activeExperience!: Experience;
 }
 
 export default class ExperienceCard extends Vue.with(Props) {}

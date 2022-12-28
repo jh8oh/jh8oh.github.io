@@ -1,5 +1,5 @@
 <template>
-  <footer class="body2">© 2021 Ji Ho Oh</footer>
+  <footer class="body2">© 2023 Ji Ho Oh</footer>
 </template>
 
 <script lang="ts">

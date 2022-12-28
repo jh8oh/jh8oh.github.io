@@ -3,12 +3,12 @@
     <div class="page-content default">
       <h1>About Me</h1>
       <section id="intro">
-        <img src="../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
+        <img src="../../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
         <p>
           Hello! My name's <strong>Ji Ho Oh</strong> (오지호) but I go by <strong>Jay</strong> as
           well. I'm a 4th-year Computational Mathematrics undergrad at the University of
           Waterloo.<br /><br />
-          I like the things I make to be
+          I like making things that are
           <span id="wave">
             <span>『</span>
             <span>ａ</span>
@@ -22,12 +22,12 @@
             <span>ｃ</span>
             <span>』</span>
           </span>
-          which has led me to designing and developing user-facing applications, such as websites or
+          , which made me prefer to design and develop front-end applications, such as websites and
           Android apps. At the moment, I'm focusing on expanding my repetoire of libraries and
           frameworks over specializing in one specific aspect. However, I am also looking for a
-          field that might capture my interest and lead me to diving deeper.<br /><br />
-          Apart from coding, I have a wide range of creative interests: landscape art, shot
-          composition, and most of all music (big indie rock fan).
+          field that might capture my interest and lead me to dive deeper.<br /><br />
+          Apart from coding, I have a wide range of creative interests: photography, world-building,
+          and electric guitar (big indie rock fan).
         </p>
       </section>
       <section id="experience">
@@ -37,8 +37,8 @@
             <div class="navigation-bar-scroll-wrapper">
               <h4 class="navigation-bar-content">
                 <li
-                  v-for="experience in experiences"
-                  :key="experience.id"
+                  v-for="(experience, index) in experiences"
+                  :key="index"
                   @click="activeExperience = experience"
                   :class="{ active: activeExperience === experience }"
                 >
@@ -48,7 +48,7 @@
             </div>
           </ul>
           <transition name="flicker" mode="out-in">
-            <ExperienceCard :key="activeExperience.id" :activeExperience="activeExperience" />
+            <ExperienceCard :activeExperience="activeExperience" />
           </transition>
         </div>
       </section>
@@ -59,10 +59,9 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import ExperienceCard from "@/components/views/about/ExperienceCard.vue";
 import Footer from "@/components/layout/Footer.vue";
-
-import { nearside, theScore, innovapost, dcCanada } from "@/assets/content/experience";
+import ExperienceCard from "./ExperienceCard.vue";
+import { experiences } from "@/assets/content/experience";
 
 @Options({
   components: {
@@ -71,7 +70,7 @@ import { nearside, theScore, innovapost, dcCanada } from "@/assets/content/exper
   },
 })
 export default class About extends Vue {
-  private experiences = [nearside, theScore, innovapost, dcCanada];
-  private activeExperience = nearside;
+  private experiences = experiences;
+  private activeExperience = experiences[0];
 }
 </script>
