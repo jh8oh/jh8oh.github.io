@@ -5,9 +5,10 @@
       <section id="intro">
         <img src="../../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
         <p>
-          Hello! My name's <strong>Ji Ho Oh</strong> (오지호) but I go by <strong>Jay</strong> as
-          well. I'm a 4th-year Computational Mathematrics undergrad at the University of
-          Waterloo.<br /><br />
+          Hello! My name's <strong>Ji Ho Oh</strong> (오지호) but most people call me
+          <strong>Jay</strong>. With a degree in Computational Mathematics from the University of
+          Waterloo under my belt, I'm currently working for Ford Motor Company as an Android
+          Developer.<br /><br />
           I like making things that are
           <span id="wave">
             <span>『</span>
@@ -22,12 +23,12 @@
             <span>ｃ</span>
             <span>』</span>
           </span>
-          , which made me prefer to design and develop front-end applications, such as websites and
-          Android apps. At the moment, I'm focusing on expanding my repetoire of libraries and
-          frameworks over specializing in one specific aspect. However, I am also looking for a
-          field that might capture my interest and lead me to dive deeper.<br /><br />
-          Apart from coding, I have a wide range of creative interests: photography, world-building,
-          and electric guitar (big indie rock fan).
+          , which is why I'm drawn to designing and developing front-end applications like websites
+          and Android apps. Right now, I'm focusing on expanding my repetoire by exploring a variety
+          of libraries and frameworks. I'm always on the lookout for new ways to elevate my work.<br /><br />
+          Apart from coding, I have a wide range of creative interests. Whether I'm capturing
+          moments through my lens, creating stories for my tabletop campaign, or shredding on my
+          electric guitar, I'm always seeking inspiration from the world around me.
         </p>
       </section>
       <section id="experience">
