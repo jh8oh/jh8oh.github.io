@@ -52,8 +52,8 @@ const ford = new Experience(
   "Ford Motor Company",
   "Android Developer",
   "https://www.ford.ca/",
-  "Apr 2023 - Present",
-  "Part of the theming team for Ford's SYNC 4 infotainment system. <br /><ul><li>Created different components for the new IVIN system. Utilized Android's <code>runtime resource overlays (RROs)</code> to integrate layouts from the Figma designs.</li><li>Implemented automotive components using Google's <code>car-ui-lib</code>, a statically linked library. Overcame documentation challenges and worked with their <code>OEM APIs</code> for seamless configuration.</li><li>Proactively fixed various visual design issues and bugs across multiple system images, ensuring SYNC 4's aesthetic integrity and usability.</li></ul>"
+  "Apr 2023 - Aug 2026",
+  "Engineered UI components for Ford's SYNC 4 infotainment system as part of the Theme Team. <br /><ul><li>Implemented custom Android components by extending Google's <code>car-ui-lib</code>, <code>androidx.preference</code>, Google Automotive Service (<code>GAS</code>), and <code>zxing QR parsing</code> library.</li><li>Integrated layout designs and animations using Android's runtime resource overlays (<code>RRO</code>s), translating Figma & Motion specs across targeted system images.</li><li>Configured Linux emulator environments to test various visual design issues across different devices while proactively fixing programmatic bugs using <code>JUnit</code>.</li></ul>"
 );
 
 export const experiences = [ford, reebee, nearside, theScore, innovapost, dcCanada];
